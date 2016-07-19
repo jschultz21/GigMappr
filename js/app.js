@@ -19,8 +19,13 @@
       templateUrl: "js/concerts/index.html",
       controller: "ConcertIndexController",
       controllerAs: "ConcertIndexViewModel"
+    })
+    .state("concertShow", {
+      url: "/concerts/:id",
+      templateUrl: "js/concerts/show.html",
+      controller: "ConcertShowController",
+      controllerAs: "ConcertShowViewModel"
     });
-
   }
 }());
 
