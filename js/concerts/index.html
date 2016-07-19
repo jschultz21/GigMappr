@@ -1,17 +1,19 @@
 <form>
-location: <input type="text" ng-model="global.search" ng-change="apiSearch()" type="submit"/>
+location: <input type="text" ng-model="global.search" ng-change="apiSearch()" type="submit" ng-click="show = ! show" />
 </form>
 
 
 
 look at all the concerts in (your city)
 
-
+<div data-ng-show="show">
 <div data-ng-repeat="concert in ConcertIndexViewModel.concerts | filter: global.search">
 <p><a data-ui-sref="concertShow({id: concert.id})"> {{concert.title}}</a></p>
 <ul>
-  <li>Headlining Artist: {{concert.artists[0]}}</li>
-  <li data-ng-repeat = "artist in concert.artists"> {{artist}} </li>
+  <li>Headlining Artist: {{concert.artists[0].name}}</li>
+  <div data-ng-repeat = "artist in concert.artists">
+    <li> {{artist.name}}</li>
+  </div>
   <li>City: {{concert.city}}</li>
   <li>Venue: {{concert.venue_name}}</li>
 
@@ -19,4 +21,5 @@ look at all the concerts in (your city)
 
 
 </ul>
+</div>
 </div>
