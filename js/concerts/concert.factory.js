@@ -6,7 +6,7 @@
   .factory("ConcertFactory", ["$resource", ConcertFactoryFunction]);
 
   function ConcertFactoryFunction($resource){
-    return $resource("http://localhost:3000/venues",{},{update: {method: "PUT"}
+    return $resource("http://localhost:3000/concerts/:id",{},{update: {method: "PUT"}
   });
 }
 
