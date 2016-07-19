@@ -11,16 +11,10 @@
     ConcertIndexControllerFunction
   ]);
 
-<<<<<<< HEAD
-  function ConcertIndexControllerFunction(ConcertFactory, $stateParams, $state, $scope){
-    var self= this;
-    self.concerts = ConcertFactory.query();
 
-=======
   function ConcertIndexControllerFunction(ConcertFactory, $state, $stateParams, $scope){
     var vm = this
     vm.concerts = ConcertFactory.query();
->>>>>>> 9b4caa0ae878ab367e41fe1a96afd503757027ac
     function apiSearch($scope) {
 
       var service = ConcertFactory, eventName = 'concert';
