@@ -2,6 +2,11 @@
 location: <input type="text" ng-model="global.search" ng-change="apiSearch()" type="submit" ng-click="show = ! show" />
 </form>
 
+<h2>Add a new show!</h2>
+<form>
+  <textarea placeholder "Concert" data-ng-model="ConcertIndexViewModel.concert.title"></textarea>
+  <button type= "button" data-ng-click="ConcertIndexViewModel.create()">Submit</button>
+</form>
 
 
 look at all the concerts in (your city)
