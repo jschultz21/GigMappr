@@ -1,1 +1,6 @@
-<h1>{{ConcertShowViewModel.concert.title}}</h1>
+<h1>TITLE</h1>
+<h2>{{ConcertShowViewModel.concert.title}}</h2>
+<p>{{ConcertShowViewModel.concert.datetime | date:'MM/dd/yyyy @ h:mma'}}</p>
+<div data-ng-repeat = "artist in ConcertShowViewModel.concert.artists">
+  <li> {{artist.name}}</li>
+</div>
