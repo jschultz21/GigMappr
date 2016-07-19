@@ -11,7 +11,9 @@
   ]);
 
   function ConcertIndexControllerFunction(ConcertFactory, $stateParams, $state, $scope){
-    this.concerts = ConcertFactory.query();
+    var self= this;
+    self.concerts = ConcertFactory.query();
+
     function apiSearch($scope) {
       console.log("1")
       var service = ConcertFactory, eventName = 'concert';
