@@ -1,5 +1,9 @@
 <h1> Project 3 - Jirt Team</h2>
 
 search form for city here:
-location: <input ng-model="query"></input> <button type="submit"> submit </button>
+<form ng-model="global.search" ng-change="apiSearch()">
+location: <input  type="text"/><button type="submit">Search</button>
+</form>
 * map marker *
+
+{{concert.title}}

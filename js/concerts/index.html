@@ -1,7 +1,13 @@
+<form>
+location: <input type="text" ng-model="global.search" ng-change="apiSearch()" type="submit"/>
+</form>
+
+
+
 look at all the concerts in (your city)
 
 
-<div data-ng-repeat="concert in ConcertIndexViewModel.concerts" | filter: {"city": query}>
+<div data-ng-repeat="concert in ConcertIndexViewModel.concerts | filter: global.search">
 <p><a data-ui-sref="concertShow({id: concert.id})"> {{concert.title}}</a></p>
 <ul>
   <li>Headlining Artist: {{concert.artists}}</li>

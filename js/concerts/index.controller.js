@@ -10,8 +10,21 @@
     ConcertIndexControllerFunction
   ]);
 
-  function ConcertIndexControllerFunction(concertFactory, $stateParams, $state){
-
-    this.concerts = concertFactory.query();
-  }
+  function ConcertIndexControllerFunction(ConcertFactory, $stateParams, $state, $scope){
+    this.concerts = ConcertFactory.query();
+    function apiSearch($scope) {
+      console.log("1")
+      var service = ConcertFactory, eventName = 'concert';
+      if ($rootScope.currentController == 'ConcertIndexController'){
+        eventName = 'concert'
+        console.log("2")
+      }
+    service.query({query: $scope.global.search}, function(response){
+     $scope.$broadcast(eventName, response)
+   });
+  };
+    // $scope.$on('concert', function(event, data) {
+    //     $scope.posts = data
+  // })
+}
 }());
