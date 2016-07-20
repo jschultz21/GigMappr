@@ -2,7 +2,7 @@
 
 (function(){
   angular
-  .module("concerts", ["ngResource", 'uiGmapgoogle-maps', 'jshor.angular-addtocalendar', 'ui-bootstrap'])
+  .module("concerts", ["ngResource", 'uiGmapgoogle-maps'])
   .config(['uiGmapGoogleMapApiProvider', function(GoogleMapApi) {
         GoogleMapApi.configure({
           v: '3.17',

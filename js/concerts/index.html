@@ -1,10 +1,7 @@
 
-
-<div class = "fakebody">
-
-  <form class = "center">
+  <form class = "center" data-ng-submit="show=true">
     <h2> Hi there, where you at?</h2>
-    <input placeholder="Enter a city" type="text" data-ng-model="global.search" data-ng-change="apiSearch()" type="submit" data-ng-keydown="show=true" />
+    <input placeholder="Enter a city" type="text" data-ng-model="global.search" data-ng-change="apiSearch()" type="submit"  />
   </form>
 
 
@@ -44,5 +41,17 @@
         <li>City: {{concert.city}}</li>
       </ul>
     </div>
-  </div>
-</div>
+
+
+
+    <div class = "board" class = "col-sm-3">
+      <h2 class = "center"> {{global.search}} discussion board</h2>
+      <div class = "comment" data-ng-repeat="comment in ConcertIndexViewModel.comments | filter: global.search"> </div>
+
+      <form data-ng-submit ="ConcertIndexViewModel.comment()">
+        <p><input placeholder="Name" data-ng-model="ConcertIndexViewModel.comment.name"></input></p>
+        <textarea type="textbox" placeholder="Comment" data-ng-model="ConcertIndexViewModel.comment.content"></textarea>
+        <input type="hidden" value="{{global.search}}" data-ng-model="ConcertIndexViewModel.comment.city"/>
+        <p><button type= "submit">Create</button></p>
+      </div>
+    </div>
