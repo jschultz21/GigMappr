@@ -27,6 +27,7 @@
   </form>
 
   <div data-ng-show="show">
+    <div class = "concerts">
     <h2 class = "center">Concerts this week in {{global.search}}</h2>
     <div class = "concert" data-ng-repeat="concert in ConcertIndexViewModel.concerts | filter: global.search">
       <p><a data-ui-sref="concertShow({id: concert.id})"> {{concert.title}} at {{concert.venue_name}}</a></p>
@@ -41,6 +42,7 @@
         <li>City: {{concert.city}}</li>
       </ul>
     </div>
+  </div>
 
 
 
