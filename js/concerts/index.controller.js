@@ -8,11 +8,12 @@
     "$state",
     "$stateParams",
     "$scope",
+    "CommentFactory",
     ConcertIndexControllerFunction
   ]);
 
 
-  function ConcertIndexControllerFunction(ConcertFactory, $state, $stateParams, $scope){
+  function ConcertIndexControllerFunction(ConcertFactory, $state, $stateParams, $scope, CommentFactory){
     var vm = this
     vm.concerts = ConcertFactory.query();
     function apiSearch($scope) {
@@ -32,6 +33,12 @@
       vm.concert.$save().then(function(response){
         $state.go("concertShow", ({id: response.id}));
       })
+    }
+
+    vm.comment = new CommentFactory();
+    vm.addComment = function() {
+      console.log(vm.comment)
+      vm.comment.$save();
     }
   }
 })();
