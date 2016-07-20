@@ -5,8 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "angular-addtocalendar": "^1.2.0",
-    "angular-google-maps": "^2.3.3",
-    "angular-momentjs": "^0.2.2"
+    "angular-momentjs": "^0.2.2",
+    "angular-google-maps": "^2.3.3"
   },
   "devDependencies": {},
   "scripts": {
