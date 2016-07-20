@@ -12,7 +12,6 @@
     ConcertIndexControllerFunction
   ]);
 
-
   function ConcertIndexControllerFunction(ConcertFactory, $state, $stateParams, $scope, CommentFactory){
     var vm = this
     vm.concerts = ConcertFactory.query();
@@ -37,8 +36,12 @@
 
     vm.comment = new CommentFactory();
     vm.addComment = function() {
+      vm.comment.city = $scope.global.search
       console.log(vm.comment)
-      vm.comment.$save();
+      vm.comment.$save().then(function(){
+        vm.comment = {};
+        $state.reload;
+      });
     }
   }
 })();
