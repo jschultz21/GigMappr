@@ -52,8 +52,11 @@
       <p><input placeholder="Name" data-ng-model="ConcertIndexViewModel.comment.name"></input></p>
       <textarea type="textbox" placeholder="Comment" data-ng-model="ConcertIndexViewModel.comment.content"></textarea>
 
+      <!-- <p><input type=hidden name="city" value="{{global.search}}" data-ng-model="ConcertIndexViewModel.comment.city"/></p> -->
+      <!-- <input type="text" name="{{global.search}}" ng-model="ConcertIndexViewModel.comment.city" style="display: none;"/> -->
 
-      <p><input type=hidden name="city" value="{{global.search}}" data-ng-model="ConcertIndexViewModel.comment.city"/></p>
+
+      <input value="{{global.search}}" data-ng-model="ConcertIndexViewModel.comment.city"  style="display: none;"/>
 
 
       <p><button type= "submit">Create</button></p>
