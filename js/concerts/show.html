@@ -1,5 +1,6 @@
 
-<h1>{{ConcertShowViewModel.concert.title}}</h1>
+<h3 data-ui-sref="concertIndex">Search More Concerts </h3>
+<h5>{{ConcertShowViewModel.concert.title}}</h5>
 
   <p>{{ConcertShowViewModel.concert.datetime | date:'MM/dd/yyyy @ h:mma'}}</p>
   <p>{{ConcertShowViewModel.concert.venue_name}}</p>
@@ -9,12 +10,7 @@
 </div>
 
 
-
-
 <a href="mailto:yourfriend@email.com?Subject=Check%20Out%20This%20Show%21&Body=You%20free%3F%3F">Tell a friend!</a>
-
-
-
 
 <div ng-if="ConcertShowViewModel.map">
 <ui-gmap-google-map center='ConcertShowViewModel.map.center' zoom='ConcertShowViewModel.map.zoom' bounds='ConcertShowViewModel.map.bounds'>
