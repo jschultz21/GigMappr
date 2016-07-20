@@ -1,0 +1,24 @@
+{
+  "name": "project3angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular-google-maps": "^2.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jschultz21/project3angular.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jschultz21/project3angular/issues"
+  },
+  "homepage": "https://github.com/jschultz21/project3angular#readme"
+}
