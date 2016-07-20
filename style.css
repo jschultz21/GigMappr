@@ -10,11 +10,12 @@
 
 body{
   background-image: url("bgg.png");
+  padding: 0 70px;
 }
 
-main {
-width: 100vh;
-width: 100vw;
+.pointer {
+  cursor: pointer;
+
 }
 
 h3 {
@@ -38,14 +39,25 @@ h2.new:hover{
   text-align: center;
 }
 
+.commentBoard {
+  background-color: #ce8964;
+  border-radius: 6px;
+  width: 300px;
+  height: 800px;
+  float: right;
+  margin-right: 30px;
+  padding: 0 10px;
+  overflow: scroll;
+}
+
 .concert {
   height: 200px;
   width: 200px;
   float: left;
-  border: 3px solid black;
-  border-radius: 5px;
-  margin: 4px;
-  padding: 4px;
+  background-color: lemonchiffon;
+  border-radius: 10px;
+  margin: 6px;
+  padding: 6px;
   overflow: scroll;
 }
 
