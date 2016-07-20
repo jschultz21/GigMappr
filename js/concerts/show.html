@@ -1,5 +1,6 @@
 
-<h2>{{ConcertShowViewModel.concert.title}}</h2>
+<h1>{{ConcertShowViewModel.concert.title}}</h1>
+
   <p>{{ConcertShowViewModel.concert.datetime | date:'MM/dd/yyyy @ h:mma'}}</p>
   <p>{{ConcertShowViewModel.concert.venue_name}}</p>
   <p>{{ConcertShowViewModel.concert.city}}
@@ -7,3 +8,5 @@
   <p>{{artist.name}}</p>
   <!-- <img data-ng-src="{{artist.photo_url}}" alt="{{artist.name}}"/> -->
 </div>
+
+<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>

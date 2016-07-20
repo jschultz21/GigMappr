@@ -56,3 +56,8 @@ header {
 .red {
   background-color: red;
 }
+
+.angular-google-map-container {
+ width: 500px;
+ height: 400px;
+}
