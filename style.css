@@ -1,0 +1,62 @@
+#welcome{
+  height: 107vh;
+  width: 120vw;
+  margin-left: -70px;
+  margin-top: -200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("pic.gif");
+}
+
+body{
+  background-image: url("bgg.png");
+}
+
+main {
+width: 100vh;
+width: 100vw;
+}
+
+.fakebody {
+  padding: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+.concert {
+  height: 200px;
+  width: 200px;
+  float: left;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin: 4px;
+  padding: 4px;
+}
+
+header {
+  text-align: center;
+  margin-left: -50px;
+}
+
+.title {
+  font-size: 120px;
+  padding-top: 20px;
+  margin-left: 100px;
+}
+
+
+.intro{
+  font-size: 70px;
+  padding-top:200px;
+}
+
+.red {
+  background-color: red;
+}
+
+.angular-google-map-container {
+ width: 500px;
+ height: 400px;
+}
