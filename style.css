@@ -36,6 +36,24 @@ width: 100vw;
   overflow: scroll;
 }
 
+.concert a {
+  font-size: 16px;
+  line-height: 15px;
+  font-weight: bold;
+  color: #832232;
+  transition: color .2s ease-in;
+}
+
+.concert a:hover{
+  color: #CE8964;
+  text-decoration:none;
+
+}
+
+.concert p {
+  text-align: center;
+}
+
 header {
   text-align: center;
   margin-left: -50px;
@@ -51,10 +69,6 @@ header {
 .intro{
   font-size: 70px;
   padding-top:200px;
-}
-
-.red {
-  background-color: red;
 }
 
 .angular-google-map-container {
