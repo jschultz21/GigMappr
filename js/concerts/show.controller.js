@@ -11,18 +11,29 @@
       ]);
 
       function ConcertShowControllerFunction(ConcertFactory, $stateParams, $scope){
-        this.concert = ConcertFactory.get({id: $stateParams.id});
-        console.log(this.concert)
+        var vm = this;
 
-        $scope.map = { center: { latitude: 40.1451, longitude: -99.6680 }, zoom: 6 };
-        $scope.marker = {
-          id: 0,
-          coords: {
-            latitude: 40.1451,
-            longitude: -99.6680
-          },
-          options: { draggable: true },
-        }
-      }
+
+        ConcertFactory.get({id: $stateParams.id}).$promise.then(function(response){
+          vm.concert = response;
+
+          vm.map = { center: { latitude: vm.concert.venue_latitude, longitude: vm.concert.venue_longitude }, zoom: 6, bounds: {} };
+          vm.marker = {
+            id: 0,
+            coords: {
+              latitude: vm.concert.venue_latitude,
+              longitude: vm.concert.venue_longitude
+            },
+            options: { draggable: true },
+            bounds: {}
+          };
+
+        })
+
+
+
+
+
+      };
 
 })();
