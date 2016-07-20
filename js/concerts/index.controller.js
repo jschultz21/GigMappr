@@ -28,6 +28,7 @@
     };
     vm.concert = new ConcertFactory();
     vm.create = function(){
+      console.log(vm.concert)
       vm.concert.$save().then(function(response){
         $state.go("concertShow", ({id: response.id}));
       })
