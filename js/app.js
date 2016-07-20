@@ -2,9 +2,10 @@
 
 (function(){
   angular
-  .module("project3", ["ui.router", "concerts"])
+  .module("project3", ["ui.router", "concerts", "uiGmapgoogle-maps"])
   .config([
     "$stateProvider",
+    'uiGmapGoogleMapApiProvider',
     RouterFunction
   ]);
 
