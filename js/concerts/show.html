@@ -1,5 +1,6 @@
 
-<h1>{{ConcertShowViewModel.concert.title}}</h1>
+<h3 data-ui-sref="concertIndex">Search More Concerts </h3>
+<h5>{{ConcertShowViewModel.concert.title}}</h5>
 
   <p>{{ConcertShowViewModel.concert.datetime | date:'MM/dd/yyyy @ h:mma'}}</p>
   <p>{{ConcertShowViewModel.concert.venue_name}}</p>
@@ -8,6 +9,7 @@
   <p>{{artist.name}}</p>
   <!-- <img data-ng-src="{{artist.photo_url}}" alt="{{artist.name}}"/> -->
 </div>
+
 
 <div ng-if="ConcertShowViewModel.map">
 <ui-gmap-google-map center='ConcertShowViewModel.map.center' zoom='ConcertShowViewModel.map.zoom' bounds='ConcertShowViewModel.map.bounds'>

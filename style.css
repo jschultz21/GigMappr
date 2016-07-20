@@ -17,6 +17,19 @@ width: 100vh;
 width: 100vw;
 }
 
+h3 {
+  font-size: 14px;
+  text-align: center;
+}
+h3:hover {
+  color: #CE8964;
+}
+
+h2.new:hover{
+  color: #CE8964;
+}
+
+
 .fakebody {
   padding: 50px;
 }
