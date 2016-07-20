@@ -9,4 +9,8 @@
   <!-- <img data-ng-src="{{artist.photo_url}}" alt="{{artist.name}}"/> -->
 </div>
 
-<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+<div ng-if="ConcertShowViewModel.map">
+<ui-gmap-google-map center='ConcertShowViewModel.map.center' zoom='ConcertShowViewModel.map.zoom' bounds='ConcertShowViewModel.map.bounds'>
+  <ui-gmap-marker coords="ConcertShowViewModel.marker.coords" options="ConcertShowViewModel.marker.options" idkey="ConcertShowViewModel.marker.id"></ui-gmap-marker>
+</ui-gmap-google-map>
+</div>
