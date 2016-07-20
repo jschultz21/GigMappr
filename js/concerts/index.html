@@ -9,9 +9,9 @@
 
 
   <h2 data-ng-click = "newShow = true">Click to add a new Gig</h2>
-  <form data-ng-show = "newShow" class = "newShow">
+  <form data-ng-submit="ConcertIndexViewModel.create()" data-ng-show = "newShow" class = "newShow">
 
-    <p><input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.title"></input> <a data-ng-click = "newArtist1 = true"> (+) another artist</a><br> </p>
+    <p><input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist"></input> <a data-ng-click = "newArtist1 = true"> (+) another artist</a><br> </p>
     <p data-ng-show = "newArtist1"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist"></input> <a data-ng-click = "newArtist2 = true"> (+) another artist</a></p>
     <p data-ng-show = "newArtist2"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist"></input> <a data-ng-click = "newArtist3 = true"> (+) another artist</a></p>
     <p data-ng-show = "newArtist3"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist"></input> </p>
@@ -22,7 +22,7 @@
     <p><input placeholder="Date" data-ng-model="ConcertIndexViewModel.concert.date"></input></p>
     <p><input placeholder="Time" data-ng-model="ConcertIndexViewModel.concert.time"></input></p>
 
-    <button type= "button" data-ng-click="ConcertIndexViewModel.create()">Submit</button>
+    <button type= "submit" >Submit</button>
     <button data-ng-click="newShow = false">Cancel</button>
   </form>
 
