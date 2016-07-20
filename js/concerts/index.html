@@ -9,20 +9,23 @@
 
 
   <h2 data-ng-click = "newShow = true">Click to add a new Gig</h2>
+
   <form data-ng-submit="ConcertIndexViewModel.create()" data-ng-show = "newShow" class = "newShow">
 
-    <p><input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist"></input> <a data-ng-click = "newArtist1 = true"> (+) another artist</a><br> </p>
-    <p data-ng-show = "newArtist1"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist"></input> <a data-ng-click = "newArtist2 = true"> (+) another artist</a></p>
-    <p data-ng-show = "newArtist2"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist"></input> <a data-ng-click = "newArtist3 = true"> (+) another artist</a></p>
-    <p data-ng-show = "newArtist3"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist"></input> </p>
+    <p><input placeholder="Concert Name" data-ng-model="ConcertIndexViewModel.concert.title"></input> <a data-ng-click = "newArtist1 = true"> (+) artist</a><br> </p>
+    <p data-ng-show = "newArtist1"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist1"></input> <a data-ng-click = "newArtist2 = true"> (+) another artist</a></p>
+    <p data-ng-show = "newArtist2"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist2"></input> <a data-ng-click = "newArtist3 = true"> (+) another artist</a></p>
+    <p data-ng-show = "newArtist3"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist3"></input> </p>
+
 
     <p><input placeholder="City" data-ng-model="ConcertIndexViewModel.concert.city"></input></p>
     <p><input placeholder="Venue" data-ng-model="ConcertIndexViewModel.concert.venue_name"></input></p>
     <p><input placeholder="Address" data-ng-model="ConcertIndexViewModel.concert.venue_address"></input></p>
-    <p><input placeholder="Date" data-ng-model="ConcertIndexViewModel.concert.date"></input></p>
+
+    <p><input placeholder="Date" data-ng-model="ConcertIndexViewModel.concert.datetime"></input></p>
     <p><input placeholder="Time" data-ng-model="ConcertIndexViewModel.concert.time"></input></p>
 
-    <button type= "submit" >Submit</button>
+    <button type= "submit">Create</button>
     <button data-ng-click="newShow = false">Cancel</button>
   </form>
 
@@ -31,6 +34,7 @@
     <div class = "concert" data-ng-repeat="concert in ConcertIndexViewModel.concerts | filter: global.search">
       <p><a data-ui-sref="concertShow({id: concert.id})"> {{concert.title}} at {{concert.venue_name}}</a></p>
       <ul>
+        <li>{{concert.datetime | date:'MM/dd/yyyy @ h:mma'}}</li>
         <li>
           Artists:
           <ul data-ng-repeat = "artist in concert.artists">
@@ -38,7 +42,6 @@
         </ul>
       </li>
         <li>City: {{concert.city}}</li>
-        <li>{{concert.datetime | date:'MM/dd/yyyy @ h:mma'}}</li>
       </ul>
     </div>
   </div>
