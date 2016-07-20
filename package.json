@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "angular-addtocalendar": "^1.2.0",
     "angular-google-maps": "^2.3.3"
   },
   "devDependencies": {},
