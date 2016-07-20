@@ -4,7 +4,7 @@
   <input placeholder="Enter a city" type="text" data-ng-model="global.search" data-ng-change="apiSearch()" />
 </form>
 
-<h2 data-ng-click = "newShow = true">Click to add a new Gig</h2>
+<h2 class="pointer" data-ng-click = "newShow = true">Click to add a new Gig</h2>
 
 <form data-ng-submit="ConcertIndexViewModel.create()" data-ng-show = "newShow" class = "newShow">
 
@@ -22,11 +22,11 @@
   <p><input placeholder="Time" data-ng-model="ConcertIndexViewModel.concert.time"></input></p>
 
   <button type= "submit">Create</button>
-  <button data-ng-click="newShow = false">Cancel</button>
+  <button type = "button" data-ng-click="newShow = false">Cancel</button>
 </form>
 
 <div data-ng-show="show">
-  <div class = "col-lg-9" >
+  <div class = "col-lg-9">
     <h2 class = "center">Concerts this week in {{global.search}}</h2>
     <div class = "concert" data-ng-repeat="concert in ConcertIndexViewModel.concerts | filter: global.search">
       <p><a data-ui-sref="concertShow({id: concert.id})"> {{concert.title}} at {{concert.venue_name}}</a></p>
@@ -44,10 +44,14 @@
   </div>
 
 
-  <div class = "board" class = "col-sm-3">
+  <div class = "commentBoard" class = "col-sm-3">
     <h2 class = "center"> {{global.search}} discussion board</h2>
-    <div class = "comment" data-ng-repeat="comment in ConcertIndexViewModel.comments | filter: global.search"> </div>
-
+    <div class = "comments">
+      <div class = "comment" data-ng-repeat="comment in ConcertIndexViewModel.comments | filter: global.search">
+        <p> Comment by {{comment.name}} at {{comment.created_at ||datetime}} </p>
+        <p>{{comment.content}}</p>
+      </div>
+    </div>
     <form data-ng-submit ="ConcertIndexViewModel.addComment()">
       <p><input placeholder="Name" data-ng-model="ConcertIndexViewModel.comment.name"></input></p>
       <textarea type="textbox" placeholder="Comment" data-ng-model="ConcertIndexViewModel.comment.content"></textarea>
