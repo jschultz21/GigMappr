@@ -1,10 +1,10 @@
 
 <form class = "center" data-ng-submit="show=true">
   <h2> Find Live Music in:</h2>
-  <input placeholder="Enter a city" type="text" data-ng-model="global.search" data-ng-change="apiSearch()" />
+  <input placeholder="Pick a city, then hit enter" type="text" data-ng-model="global.search" data-ng-change="apiSearch()" />
 </form>
 
-<h2 class="pointer" data-ng-click = "newShow = true">Click to add a new Gig</h2>
+<h2 class="pointer" class = "new" data-ng-click = "newShow = true">Click to add a new Gig</h2>
 
 <form data-ng-submit="ConcertIndexViewModel.create()" data-ng-show = "newShow" class = "newShow">
 
@@ -12,9 +12,6 @@
   <p data-ng-show = "newArtist1"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist1"></input> <a data-ng-click = "newArtist2 = true"> (+) another artist</a></p>
   <p data-ng-show = "newArtist2"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist2"></input> <a data-ng-click = "newArtist3 = true"> (+) another artist</a></p>
   <p data-ng-show = "newArtist3"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist3"></input> </p>
-
-
-  <h2 data-ng-click = "newShow = true" class="new">Click to add a new Gig</h2>
 
 
   <p><input placeholder="City" data-ng-model="ConcertIndexViewModel.concert.city"></input></p>
@@ -45,7 +42,6 @@
       </ul>
     </div>
   </div>
-
 
   <div class = "commentBoard" class = "col-sm-3">
     <h2 class = "center"> {{global.search}} discussion board</h2>

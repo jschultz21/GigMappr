@@ -1,8 +1,9 @@
+
 #welcome{
-  height: 107vh;
-  width: 120vw;
+  height: 100vh;
+  width: 100vw;
   margin-left: -70px;
-  margin-top: -200px;
+  margin-top: -400px;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("pic.gif");
@@ -13,23 +14,23 @@ body{
   padding: 0 70px;
 }
 
-.pointer {
-  cursor: pointer;
-
-}
-
 h3 {
   font-size: 14px;
   text-align: center;
 }
 h3:hover {
   color: #CE8964;
+  cursor: pointer;
 }
 
 h2.new:hover{
   color: #CE8964;
 }
 
+.pointer {
+  cursor: pointer;
+
+}
 
 .fakebody {
   padding: 50px;
@@ -54,7 +55,7 @@ h2.new:hover{
   height: 200px;
   width: 200px;
   float: left;
-  background-color: lemonchiffon;
+  background-color: #DFF2D8;
   border-radius: 10px;
   margin: 6px;
   padding: 6px;
@@ -82,21 +83,68 @@ h2.new:hover{
 header {
   text-align: center;
   margin-left: -50px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .title {
   font-size: 120px;
   padding-top: 20px;
   margin-left: 100px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 20px;
 }
 
 
 .intro{
   font-size: 70px;
-  padding-top:200px;
+  margin-left: 80px;
+  text-transform: lowercase;
+  color: #DFF2D8;
+}
+
+h1{
+  margin-top: 80px;
 }
 
 .angular-google-map-container {
  width: 500px;
  height: 400px;
+}
+
+
+
+header button {
+  margin-top: 5px;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
+	background:(top, #ededed 5%, #dfdfdf 100%);
+	background:(top, #ededed 5%, #dfdfdf 100%);
+	background:(to bottom, #ededed 5%, #dfdfdf 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
+	background-color:#ededed;
+	border-radius:20px;
+	border:2px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#777777;
+	font-family: helvetica neue;
+	font-size:20px;
+	font-weight:bold;
+	padding:14px 38px;
+	text-shadow:0px 0px 0px #ffffff;
+}
+header button:hover {
+	background:gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
+	background:(top, #dfdfdf 5%, #ededed 100%);
+	background:(top, #dfdfdf 5%, #ededed 100%);
+	background:(top, #dfdfdf 5%, #ededed 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed',GradientType=0);
+	background-color:#dfdfdf;
+}
+header button:active {
+	position:relative;
+	top:1px;
+  outline: none;
 }

@@ -18,6 +18,7 @@
 
     function apiSearch($scope) {
 
+
       var service = ConcertFactory, eventName = 'concert';
       if ($rootScope.currentController == 'ConcertIndexController'){
         eventName = 'concert'
@@ -40,8 +41,8 @@
       vm.comment.city = $scope.global.search
       console.log(vm.comment)
       vm.comment.$save().then(function(){
-        $state.reload;
         vm.comment = {};
+        $state.reload();
       });
     }
   }
