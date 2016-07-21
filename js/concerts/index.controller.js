@@ -23,7 +23,7 @@
     var vm = this
     vm.concerts = ConcertFactory.query();
     $scope.changeUrl = function(){
-      // $location.search('city', $scope.global.search);
+      $location.search('city', $scope.global.search);
     }
 
     vm.apiSearch = function($scope) {
