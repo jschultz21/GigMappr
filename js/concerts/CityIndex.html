@@ -1,18 +1,19 @@
-I'm on the city index!!
 
 
+<form class = "center" data-ng-submit="changeUrl()">
+  <h2> Find Live Music in:</h2>
+  <input placeholder="Pick a city, then hit enter" type="text" data-ng-model="first.citySearch.city"/>
+</form>
 
+
+<h2 class="pointer" class = "new" data-ng-click = "newShow= true">Click to add a new Gig</h2>
 
 <form data-ng-submit="ConcertCityIndexViewModel.create()" data-ng-show = "newShow" class = "newShow">
-
-  <h2 class="pointer" class = "new" data-ng-click = "newShow = true">Click to add a new Gig</h2>
-
 
   <p><input placeholder="Concert Name" data-ng-model="ConcertCityIndexViewModel.concert.title"></input> <a data-ng-click = "newArtist1 = true"> (+) artist</a><br> </p>
   <p data-ng-show = "newArtist1"> <input placeholder="Artist" data-ng-model="ConcertCityIndexViewModel.concert.artist1"></input> <a data-ng-click = "newArtist2 = true"> (+) another artist</a></p>
   <p data-ng-show = "newArtist2"> <input placeholder="Artist" data-ng-model="ConcertCityIndexViewModel.concert.artist2"></input> <a data-ng-click = "newArtist3 = true"> (+) another artist</a></p>
   <p data-ng-show = "newArtist3"> <input placeholder="Artist" data-ng-model="ConcertCityIndexViewModel.concert.artist3"></input> </p>
-
 
   <p><input placeholder="City" data-ng-model="ConcertCityIndexViewModel.concert.city"></input></p>
   <p><input placeholder="Venue" data-ng-model="ConcertCityIndexViewModel.concert.venue_name"></input></p>
@@ -25,7 +26,8 @@ I'm on the city index!!
   <button type = "button" data-ng-click="newShow = false">Cancel</button>
 </form>
 
-<div data-ng-show="show">
+
+<div >
   <div class = "col-lg-9">
     <h2 class = "center">Concerts this week in {{global.search}}</h2>
     <div class = "concert" data-ng-repeat="concert in ConcertCityIndexViewModel.concerts | filter: global.search">

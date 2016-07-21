@@ -9,9 +9,11 @@
     ConcertIndexControllerFunction
   ]);
 
-  function ConcertIndexControllerFunction($state, $scope){
+  function ConcertIndexControllerFunction($state, $scope, citySearch){
+    var first = this;
+    first.citySearch = citySearch;
+
     $scope.changeUrl = function() {
-      console.log($scope.global.search);
       $state.go("concertCityIndex", ({city: $scope.global.search}))
     }
   }

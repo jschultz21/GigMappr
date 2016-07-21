@@ -6,7 +6,12 @@
   .config([
     "$stateProvider",
     RouterFunction
-  ]);
+  ])
+  .service("citySearch", function citySearch() {
+    var citySearch = this;
+
+    citySearch.city = "Boston";
+  });
 
   function RouterFunction ($stateProvider){
     $stateProvider
@@ -31,6 +36,6 @@
       templateUrl: "js/concerts/show.html",
       controller: "ConcertShowController",
       controllerAs: "ConcertShowViewModel"
-    });
+    })
   }
 }());
