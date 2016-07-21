@@ -6,7 +6,7 @@
   .factory("CommentFactory", ["$resource", CommentFactoryFunction]);
 
   function CommentFactoryFunction($resource){
-    return $resource("http://localhost:3000/comments/:id",{},{update: {method: "PUT"}
+    return $resource("https://gigmappr.herokuapp.com/comments/:id",{},{update: {method: "PUT"}
   });
 }
 

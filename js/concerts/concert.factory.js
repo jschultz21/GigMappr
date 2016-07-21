@@ -6,7 +6,7 @@
   .factory("ConcertFactory", ["$resource", ConcertFactoryFunction]);
 
   function ConcertFactoryFunction($resource){
-    return $resource("http://localhost:3000/concerts/:id",{},{update: {method: "PUT"}
+    return $resource("https://gigmappr.herokuapp.com/concerts/:id",{},{update: {method: "PUT"}
   });
 }
 
