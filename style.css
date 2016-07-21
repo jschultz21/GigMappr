@@ -240,3 +240,8 @@ input{
       box-shadow: 1px 0px 2px #DCDCDC;
       outline: none !important;
   }
+
+small{
+  font-size: 110px;
+  letter-spacing: 10px;
+}
