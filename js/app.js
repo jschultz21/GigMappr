@@ -18,7 +18,8 @@
       url: "/concerts",
       templateUrl: "js/concerts/index.html",
       controller: "ConcertIndexController",
-      controllerAs: "ConcertIndexViewModel"
+      controllerAs: "ConcertIndexViewModel",
+
     })
     .state("concertShow", {
       url: "/concerts/:id",

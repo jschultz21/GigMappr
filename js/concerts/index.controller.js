@@ -8,28 +8,43 @@
     "$state",
     "$stateParams",
     "$scope",
+    "$location",
     "CommentFactory",
     ConcertIndexControllerFunction
   ]);
 
-  function ConcertIndexControllerFunction(ConcertFactory, $state, $stateParams, $scope, CommentFactory){
+
+
+  function ConcertIndexControllerFunction(ConcertFactory, $state, $stateParams, $scope, $location, CommentFactory){
+
+    var searchObject = $location.search();
+    console.log(searchObject.city)
+
     var vm = this
     vm.concerts = ConcertFactory.query();
+    $scope.changeUrl = function(){
+      $location.search('city', $scope.global.search);
+    }
 
-    function apiSearch($scope) {
-
-
+    vm.apiSearch = function($scope) {
       var service = ConcertFactory, eventName = 'concert';
       if ($rootScope.currentController == 'ConcertIndexController'){
         eventName = 'concert'
       }
-      service.query({query: $scope.global.search}, function(response){
+
+      if (searchObject == true) {
+      var search = searchObject
+    }
+      else {
+        var search = $scope.global.search
+      
+      }
+      service.query({query: search}, function(response){
         $scope.$broadcast(eventName, response)
       });
     };
     vm.concert = new ConcertFactory();
     vm.create = function(){
-      console.log(vm.concert)
       vm.concert.$save().then(function(response){
         $state.go("concertShow", ({id: response.id}));
       })

@@ -1,7 +1,8 @@
 
 <form class = "center" data-ng-submit="show=true">
   <h2> Find Live Music in:</h2>
-  <input placeholder="Pick a city, then hit enter" type="text" data-ng-model="global.search" data-ng-change="apiSearch()" />
+  <input placeholder="Pick a city, then hit enter" type="text" data-ng-model="global.search" data-ng-change="changeUrl()"/>
+
 </form>
 
 <h2 class="pointer" class = "new" data-ng-click = "newShow = true">Click to add a new Gig</h2>
@@ -30,30 +31,33 @@
     <h2 class = "center">Concerts this week in {{global.search}}</h2>
     <div class = "concert" data-ng-repeat="concert in ConcertIndexViewModel.concerts | filter: global.search">
       <p><a data-ui-sref="concertShow({id: concert.id})"> {{concert.title}} at {{concert.venue_name}}</a></p>
-      <ul>
-        <li>{{concert.datetime | date:'MM/dd/yyyy @ h:mma'}}</li>
-        <li>
-          Artists:
-          <ul data-ng-repeat = "artist in concert.artists">
-            <li>{{artist.name}}</li>
-          </ul>
-        </li>
-        <li>City: {{concert.city}}</li>
-      </ul>
+        <p>{{concert.datetime | date:'MM/dd/yyyy @ h:mma'}} </p>
+          <div data-ng-repeat = "artist in concert.artists">
+            <p>{{artist.name}}</p>
+          </div>
     </div>
   </div>
 
   <div class = "commentBoard" class = "col-sm-3">
     <h2 class = "center"> {{global.search}} discussion board</h2>
-    <div class = "comments">
-      <div class = "comment" data-ng-repeat="comment in ConcertIndexViewModel.comments | filter: global.search">
-        <p> Comment by {{comment.name}} at {{comment.created_at ||datetime}} </p>
-        <p>{{comment.content}}</p>
-      </div>
-    </div>
-    <form data-ng-submit ="ConcertIndexViewModel.addComment()">
+
+    <a class = "pointer" data-ng-click = "newForm=true"><h3> add a comment</h3></a>
+
+    <form data-ng-show = "newForm" data-ng-submit ="ConcertIndexViewModel.addComment()">
       <p><input placeholder="Name" data-ng-model="ConcertIndexViewModel.comment.name"></input></p>
       <textarea type="textbox" placeholder="Comment" data-ng-model="ConcertIndexViewModel.comment.content"></textarea>
-      <p><button type="submit">Create</button></p>
+      <p><button type="submit">Create</button>
+      <button type = "button" data-ng-click="newForm = false">Cancel</button></p>
+
+
+    </form>
+
+    <div class = "comments">
+      <div class = "comment" data-ng-repeat="comment in ConcertIndexViewModel.comments | filter: global.search">
+        <p class = "timestamp"> {{comment.name}} at {{comment.updated_at ||datetime}} </p>
+        <p >{{comment.content}}</p>
+      </div>
+    </div>
+
     </div>
   </div>
