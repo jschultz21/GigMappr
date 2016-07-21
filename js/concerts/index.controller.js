@@ -5,13 +5,13 @@
   .module("concerts")
   .controller("ConcertIndexController", [
     "$state",
-    "$stateParams",
     "$scope",
     ConcertIndexControllerFunction
   ]);
 
-  function ConcertIndexControllerFunction($state, $stateParams, $scope){
+  function ConcertIndexControllerFunction($state, $scope){
     $scope.changeUrl = function() {
+      console.log($scope.global.search);
       $state.go("concertCityIndex", ({city: $scope.global.search}))
     }
   }
