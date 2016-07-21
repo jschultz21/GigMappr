@@ -20,6 +20,12 @@
       controller: "ConcertIndexController",
       controllerAs: "ConcertIndexViewModel"
     })
+    .state("concertCityIndex", {
+      url: "/concerts/:city",
+      templateUrl: "js/concerts/CityIndex.html",
+      controller: "ConcertCityIndexController",
+      controllerAs: "ConcertCityIndexViewModel"
+    })
     .state("concertShow", {
       url: "/concerts/:id",
       templateUrl: "js/concerts/show.html",

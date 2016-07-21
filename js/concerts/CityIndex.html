@@ -1,0 +1,59 @@
+I'm on the city index!!
+
+
+
+
+<form data-ng-submit="ConcertCityIndexViewModel.create()" data-ng-show = "newShow" class = "newShow">
+
+  <h2 class="pointer" class = "new" data-ng-click = "newShow = true">Click to add a new Gig</h2>
+
+
+  <p><input placeholder="Concert Name" data-ng-model="ConcertCityIndexViewModel.concert.title"></input> <a data-ng-click = "newArtist1 = true"> (+) artist</a><br> </p>
+  <p data-ng-show = "newArtist1"> <input placeholder="Artist" data-ng-model="ConcertCityIndexViewModel.concert.artist1"></input> <a data-ng-click = "newArtist2 = true"> (+) another artist</a></p>
+  <p data-ng-show = "newArtist2"> <input placeholder="Artist" data-ng-model="ConcertCityIndexViewModel.concert.artist2"></input> <a data-ng-click = "newArtist3 = true"> (+) another artist</a></p>
+  <p data-ng-show = "newArtist3"> <input placeholder="Artist" data-ng-model="ConcertCityIndexViewModel.concert.artist3"></input> </p>
+
+
+  <p><input placeholder="City" data-ng-model="ConcertCityIndexViewModel.concert.city"></input></p>
+  <p><input placeholder="Venue" data-ng-model="ConcertCityIndexViewModel.concert.venue_name"></input></p>
+  <p><input placeholder="Address" data-ng-model="ConcertCityIndexViewModel.concert.venue_address"></input></p>
+
+  <p><input placeholder="Date" data-ng-model="ConcertCityIndexViewModel.concert.datetime"></input></p>
+  <p><input placeholder="Time" data-ng-model="ConcertCityIndexViewModel.concert.time"></input></p>
+
+  <button type= "submit">Create</button>
+  <button type = "button" data-ng-click="newShow = false">Cancel</button>
+</form>
+
+<div data-ng-show="show">
+  <div class = "col-lg-9">
+    <h2 class = "center">Concerts this week in {{global.search}}</h2>
+    <div class = "concert" data-ng-repeat="concert in ConcertCityIndexViewModel.concerts | filter: global.search">
+      <p><a data-ui-sref="concertShow({id: concert.id})"> {{concert.title}} at {{concert.venue_name}}</a></p>
+      <ul>
+        <li>{{concert.datetime | date:'MM/dd/yyyy @ h:mma'}}</li>
+        <li>
+          Artists:
+          <ul data-ng-repeat = "artist in concert.artists">
+            <li>{{artist.name}}</li>
+          </ul>
+        </li>
+        <li>City: {{concert.city}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class = "commentBoard" class = "col-sm-3">
+    <h2 class = "center"> {{global.search}} discussion board</h2>
+    <div class = "comments">
+      <div class = "comment" data-ng-repeat="comment in ConcertCityIndexViewModel.comments | filter: global.search">
+        <p> Comment by {{comment.name}} at {{comment.created_at ||datetime}} </p>
+        <p>{{comment.content}}</p>
+      </div>
+    </div>
+    <form data-ng-submit ="ConcertCityIndexViewModel.addComment()">
+      <p><input placeholder="Name" data-ng-model="ConcertCityIndexViewModel.comment.name"></input></p>
+      <textarea type="textbox" placeholder="Comment" data-ng-model="ConcertCityIndexViewModel.comment.content"></textarea>
+      <p><button type="submit">Create</button></p>
+    </div>
+  </div>
