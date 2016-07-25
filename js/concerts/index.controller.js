@@ -13,8 +13,6 @@
     ConcertIndexControllerFunction
   ]);
 
-
-
   function ConcertIndexControllerFunction(ConcertFactory, $state, $stateParams, $scope, $location, CommentFactory){
 
     var searchObject = $location.search();
