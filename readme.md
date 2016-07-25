@@ -4,7 +4,7 @@ GigMappr is an Angular on Rails Application that allows users to search and expl
 
 ## Planning
 
-All planning and wireframing was done on Friday. Please see photos included in planning folder. Tools used for planning: whiteboard, Trello.
+All planning and wireframing was done on Friday. Please see photos included in planning folder. Tools used for planning: whiteboard, Trello. The team created a list of desired features to implement, and sorted them by priority allowing us to make incremental progress and add new features once we completed the MVP. 
 
 ## Unsolved Issues
 Add to Calendar button on concert show pages
