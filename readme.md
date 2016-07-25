@@ -23,4 +23,4 @@ $state, $stateParams, $scope, $location
 ### Ruby on Rails gems
 * httparty - used to convert API data from its url
 * figaro - used to conceal API key information
-* rack-cors - used to allow for cross-origin-resource-sharing between the rails and angular portions of the application.
+* rack-cors - used to allow for cross-origin-resource-sharing between the rails and angular portions of the application
